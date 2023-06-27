@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace UnityEngine.XR.ARFoundation.Samples
 {
-    public class RaycastBlaster : MonoBehaviour
+    public class ARRaycastBlaster : MonoBehaviour
     {
         [SerializeField]
         private ARRaycastManager raycastManager;
@@ -40,12 +40,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 // Does this raycast hit a plane?
                 if ((hit.hitType & ARSubsystems.TrackableType.Planes) != 0)
                 {
-                    logText.text += $"Hit </color> a plane with id {hit.trackableId}\r";
+                    logText.text += $"Hit a plane with id {hit.trackableId}\n";
                 }
                 else
                 {
                     // Raycast hit another type of object.
-                    logText.text += $"Hit </color> a object with type {hit.hitType}\r";
+                    logText.text += $"Hit a object with type {hit.hitType}\n";
                 }
             }
         }
