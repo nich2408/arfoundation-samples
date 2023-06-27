@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityEngine.XR.ARFoundation.Samples
 {
@@ -9,6 +10,9 @@ namespace UnityEngine.XR.ARFoundation.Samples
     {
         [SerializeField]
         private ARRaycastManager raycastManager;
+
+        [SerializeField]
+        private Text logText;
 
         /// <summary>
         /// List of raycast hits. The list gets populated every time so new list allocations can be avoided.
@@ -36,12 +40,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 // Does this raycast hit a plane?
                 if ((hit.hitType & ARSubsystems.TrackableType.Planes) != 0)
                 {
-                    Debug.Log("<color=green> Hit </color> a plane with id " + hit.trackableId.ToString());
+                    logText.text += $"Hit </color> a plane with id {hit.trackableId}\r";
                 }
                 else
                 {
                     // Raycast hit another type of object.
-                    Debug.Log("<color=yellow> Hit </color> an object with type " + hit.hitType);
+                    logText.text += $"Hit </color> a object with type {hit.hitType}\r";
                 }
             }
         }
