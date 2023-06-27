@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 1031742169}
   - component: {fileID: 1031742170}
   m_Layer: 0
-  m_Name: RaycastBlaster
+  m_Name: ARRaycastBlaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
